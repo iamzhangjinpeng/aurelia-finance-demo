@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react'
+import { lazy } from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { DemoProvider } from './lib/store'
@@ -6,6 +6,7 @@ import { Brand } from './components/UI'
 import Workspace from './components/Workspace'
 import Landing from './pages/Landing'
 import Login from './pages/Login'
+import AppErrorBoundary from './components/AppErrorBoundary'
 const Overview = lazy(() => import('./pages/Overview'))
 const Transactions = lazy(() => import('./pages/Transactions'))
 const Accounts = lazy(() => import('./pages/Accounts'))
@@ -43,16 +44,10 @@ function AppRoutes() {
 
 export default function App() {
   return (
-    <DemoProvider>
-      <Suspense
-        fallback={
-          <div className="route-loading" role="status">
-            Loading your workspace…
-          </div>
-        }
-      >
+    <AppErrorBoundary>
+      <DemoProvider>
         <AppRoutes />
-      </Suspense>
-    </DemoProvider>
+      </DemoProvider>
+    </AppErrorBoundary>
   )
 }

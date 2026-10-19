@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { Link, Navigate, NavLink, Outlet, useLocation } from 'react-router-dom'
 import {
   ArrowLeftRight,
@@ -18,6 +18,7 @@ import {
 import { useDemo } from '../lib/store'
 import { Brand, Confirm } from './UI'
 import ThemeButton from './ThemeButton'
+import AppErrorBoundary from './AppErrorBoundary'
 const navigation = [
   { label: 'Overview', path: '/app', icon: LayoutDashboard },
   { label: 'Transactions', path: '/app/transactions', icon: ArrowLeftRight },
@@ -165,7 +166,17 @@ export default function Workspace() {
           </div>
         </header>
         <div className="content-area">
-          <Outlet />
+          <AppErrorBoundary key={location.pathname}>
+            <Suspense
+              fallback={
+                <div className="route-pending" role="status">
+                  Loading your workspace…
+                </div>
+              }
+            >
+              <Outlet />
+            </Suspense>
+          </AppErrorBoundary>
         </div>
         <footer className="workspace-footer">
           <span>© 2026 Aurelia Finance</span>

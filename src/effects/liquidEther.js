@@ -5,22 +5,22 @@ import {
   HalfFloatType,
   LinearFilter,
   RGBAFormat,
-} from 'three/src/constants.js'
-import { BufferAttribute } from 'three/src/core/BufferAttribute.js'
-import { BufferGeometry } from 'three/src/core/BufferGeometry.js'
-import { Camera } from 'three/src/cameras/Camera.js'
-import { Clock } from 'three/src/core/Clock.js'
-import { Color } from 'three/src/math/Color.js'
-import { DataTexture } from 'three/src/textures/DataTexture.js'
-import { LineSegments } from 'three/src/objects/LineSegments.js'
-import { Mesh } from 'three/src/objects/Mesh.js'
-import { PlaneGeometry } from 'three/src/geometries/PlaneGeometry.js'
-import { RawShaderMaterial } from 'three/src/materials/RawShaderMaterial.js'
-import { Scene } from 'three/src/scenes/Scene.js'
-import { Vector2 } from 'three/src/math/Vector2.js'
-import { Vector4 } from 'three/src/math/Vector4.js'
-import { WebGLRenderTarget } from 'three/src/renderers/WebGLRenderTarget.js'
-import { WebGLRenderer } from 'three/src/renderers/WebGLRenderer.js'
+  BufferAttribute,
+  BufferGeometry,
+  Camera,
+  Clock,
+  Color,
+  DataTexture,
+  LineSegments,
+  Mesh,
+  PlaneGeometry,
+  RawShaderMaterial,
+  Scene,
+  Vector2,
+  Vector4,
+  WebGLRenderTarget,
+  WebGLRenderer,
+} from 'three'
 
 // Original fluid simulation, retained with its shader settings and palette.
 // Shader strings, numerical passes, palette, input scaling, and defaults are
