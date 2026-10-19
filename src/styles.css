@@ -2970,3 +2970,112 @@ tr:hover td {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+/* Original landing-page motion, integrated with React lifecycle cleanup. */
+.hero,
+.landing-cta {
+  isolation: isolate;
+}
+.fluid-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+.fluid-softening {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(
+    ellipse 55% 45% at center,
+    color-mix(in srgb, var(--bg) 92%, transparent) 0%,
+    color-mix(in srgb, var(--bg) 50%, transparent) 40%,
+    transparent 70%
+  );
+}
+.hero .hero-grid {
+  z-index: 1;
+}
+.hero .hero-content,
+.hero .floating-stat {
+  z-index: 2;
+}
+.hero .hero-glow {
+  pointer-events: none;
+}
+.landing-cta {
+  position: relative;
+  overflow: hidden;
+}
+.cta-fluid-background {
+  opacity: 0.9;
+  mask-image: linear-gradient(to bottom, transparent, black 22%, black 78%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 22%, black 78%, transparent);
+}
+.cta-content {
+  position: relative;
+  z-index: 2;
+}
+.cta-content > svg {
+  color: var(--accent);
+}
+.hero .pulse {
+  animation: landing-pulse 2s infinite;
+}
+.hero h1 {
+  animation: landing-fade-up 1s 0.2s both;
+}
+.hero-tagline {
+  animation: landing-fade-up 1s 0.4s both;
+}
+.hero-description {
+  animation: landing-fade-up 1s 0.5s both;
+}
+.hero-actions {
+  animation: landing-fade-up 1s 0.6s both;
+}
+.hero-note {
+  animation: landing-fade-up 1s 0.7s both;
+}
+.reveal-pending {
+  transition:
+    opacity 0.8s ease,
+    translate 0.8s ease;
+}
+.reveal-pending:not(.visible) {
+  opacity: 0;
+  translate: 0 30px;
+}
+@keyframes landing-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes landing-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.3);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fluid-background {
+    display: none;
+  }
+  .reveal-pending:not(.visible) {
+    opacity: 1;
+    translate: none;
+  }
+}

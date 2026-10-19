@@ -20,7 +20,7 @@ Open the homepage, choose **Explore the demo**, then use **Fill demo credentials
 
 ### What you can try
 
-- **Landing page:** gradient branding, workspace preview, product features, and a clear demo entry point.
+- **Landing page:** pointer-responsive WebGL fluid backgrounds, entrance and scroll-reveal animations, gradient branding, workspace preview, product features, and a clear demo entry point.
 - **Overview:** settled balances, monthly income and expenses, interactive cash-flow charts, spending breakdown, and CSV export.
 - **Transactions:** combined text/category/status filters, sorting, pagination, transaction details, and filtered CSV download.
 - **Accounts & cards:** sample checking and reserve accounts, virtual card creation, freeze/unfreeze controls, and editable spending limits.

@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight,
@@ -16,10 +17,14 @@ import {
 import { useDemo } from '../lib/store'
 import { Brand } from '../components/UI'
 import ThemeButton from '../components/ThemeButton'
+import FluidBackground from '../components/FluidBackground'
+import { useLandingMotion } from '../effects/useLandingMotion'
 export default function Landing() {
   const { authenticated } = useDemo()
+  const root = useRef<HTMLElement>(null)
+  useLandingMotion(root)
   return (
-    <main className="landing">
+    <main ref={root} className="landing">
       <header className="public-header">
         <Link to="/" aria-label="Aurelia home">
           <Brand />
@@ -35,6 +40,7 @@ export default function Landing() {
         </nav>
       </header>
       <section className="hero">
+        <FluidBackground />
         <div className="hero-grid" />
         <span className="hero-glow glow-one" />
         <span className="hero-glow glow-two" />
@@ -91,7 +97,7 @@ export default function Landing() {
         </div>
       </section>
       <section id="experience" className="experience-section">
-        <div className="section-intro">
+        <div className="section-intro reveal">
           <span className="eyebrow">LESS NOISE. MORE CLARITY.</span>
           <h2>
             Everything connects.
@@ -102,7 +108,7 @@ export default function Landing() {
         </div>
         <Link
           to={authenticated ? '/app' : '/login'}
-          className="workspace-preview"
+          className="workspace-preview reveal"
           aria-label="Explore the finance workspace"
         >
           <div className="preview-sidebar">
@@ -172,7 +178,7 @@ export default function Landing() {
         </Link>
       </section>
       <section id="features" className="features-section">
-        <div className="section-intro">
+        <div className="section-intro reveal">
           <span className="eyebrow">A WORKSPACE THAT WORKS FOR YOU</span>
           <h2>Small details. Big difference.</h2>
         </div>
@@ -199,7 +205,7 @@ export default function Landing() {
               text: 'Build thoughtful budgets and see exactly how much room you have left.',
             },
           ].map(({ icon: Icon, title, text }, i) => (
-            <article className="feature-card" key={title}>
+            <article className="feature-card reveal" key={title}>
               <span className="feature-number">0{i + 1}</span>
               <span className="stat-icon">
                 <Icon size={22} />
@@ -211,13 +217,16 @@ export default function Landing() {
         </div>
       </section>
       <section className="landing-cta">
-        <Sparkles size={26} />
-        <h2>A little more clarity starts here.</h2>
-        <p>Step into Alex’s workspace and try it for yourself.</p>
-        <Link className="primary-button" to={authenticated ? '/app' : '/login'}>
-          Open the demo
-          <ArrowRight size={16} />
-        </Link>
+        <FluidBackground cta />
+        <div className="cta-content reveal">
+          <Sparkles size={26} />
+          <h2>A little more clarity starts here.</h2>
+          <p>Step into Alex’s workspace and try it for yourself.</p>
+          <Link className="primary-button" to={authenticated ? '/app' : '/login'}>
+            Open the demo
+            <ArrowRight size={16} />
+          </Link>
+        </div>
       </section>
       <footer className="public-footer">
         <Brand />
