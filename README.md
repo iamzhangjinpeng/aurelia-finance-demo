@@ -6,9 +6,17 @@ An interactive finance workspace built with React and TypeScript. Designed as a 
 
 All people, balances, accounts, and transactions are fictional. The app runs entirely in the browser and needs no backend, API keys, or bank connection.
 
-![Aurelia Finance dashboard](docs/images/dashboard-light.png)
+## Product walkthrough
 
-[Landing page preview](docs/images/landing.png) · [Dark theme preview](docs/images/dashboard-dark.png)
+A 35-second screen recording of the interactive homepage, light/dark themes, demo sign-in, and the complete finance workspace: overview, transaction search, accounts and cards, budgets, and settings.
+
+[![Aurelia Finance — animated product walkthrough](docs/media/aurelia-preview.gif)](docs/media/aurelia-walkthrough.mp4)
+
+**[Watch or download the full MP4](https://github.com/iamzhangjinpeng/aurelia-finance-demo/raw/refs/heads/main/docs/media/aurelia-walkthrough.mp4)** · 35 seconds · 1.5 MB · H.264 · No audio
+
+Recorded from the running app with fictional data. The preview loops automatically; click it to open the full recording.
+
+Screenshots: [Light dashboard](docs/images/dashboard-light.png) · [Dark dashboard](docs/images/dashboard-dark.png) · [Homepage](docs/images/landing.png)
 
 ## Explore the demo
 
