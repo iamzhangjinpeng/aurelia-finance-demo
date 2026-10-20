@@ -15,7 +15,7 @@ import type { Category } from '../lib/data'
 export function Brand({ compact = false }: { compact?: boolean }) {
   return (
     <span className="brand">
-      <img src="/favicon.svg" alt="" width="39" height="39" />
+      <img src={`${import.meta.env.BASE_URL}favicon.svg`} alt="" width="39" height="39" />
       {!compact && (
         <span>
           <strong>

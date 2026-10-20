@@ -1,5 +1,5 @@
-import { lazy } from 'react'
-import { Link, Route, Routes } from 'react-router-dom'
+import { lazy, useEffect } from 'react'
+import { Link, Route, Routes, useLocation } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { DemoProvider } from './lib/store'
 import { Brand } from './components/UI'
@@ -13,6 +13,19 @@ const Accounts = lazy(() => import('./pages/Accounts'))
 const Budgets = lazy(() => import('./pages/Budgets'))
 const Settings = lazy(() => import('./pages/Settings'))
 function AppRoutes() {
+  const { pathname, hash } = useLocation()
+  useEffect(() => {
+    if (hash) {
+      const target = document.getElementById(hash.slice(1))
+      target?.scrollIntoView({
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+          ? 'instant'
+          : 'smooth',
+      })
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+    }
+  }, [pathname, hash])
   return (
     <Routes>
       <Route path="/" element={<Landing />} />

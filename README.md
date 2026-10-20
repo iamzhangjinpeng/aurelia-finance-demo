@@ -2,6 +2,8 @@
 
 **Your money. A clearer perspective.**
 
+**[Open the live demo](https://iamzhangjinpeng.github.io/aurelia-finance-demo/)**
+
 An interactive finance workspace built with React and TypeScript. Designed as a portfolio project for demonstrating polished product design, responsive dashboards, accessible interactions, and useful frontend behavior.
 
 All people, balances, accounts, and transactions are fictional. The app runs entirely in the browser and needs no backend, API keys, or bank connection.
@@ -108,11 +110,12 @@ Cash-flow history and forecasts, budget activity, card spending, and the savings
 
 This is a static single-page application. Build with `npm run build` and serve `dist/`.
 
+- **GitHub Pages:** the `Deploy to GitHub Pages` workflow checks, builds, and deploys `main` automatically. Select **Settings → Pages → Source → GitHub Actions** once. The workflow uses the repository base path and hash routing, so bookmarked dashboard pages also work on refresh.
 - **Vercel:** import the repository, select the Vite preset, and deploy. `vercel.json` handles client-side routes.
 - **Netlify:** use `npm run build` and publish `dist`. The included `_redirects` file handles client-side routes.
 - **Other static hosts:** rewrite application paths such as `/app/transactions` to `/index.html`, while serving assets normally.
 
-Deploy at the domain root. GitHub Pages subdirectory hosting requires configuring Vite's base path and the router basename first.
+The default build uses browser routing for root-domain hosts. The Pages workflow supplies its base path and `VITE_ROUTER_MODE=hash`; dashboard URLs use `#/app`, with no server rewrite required.
 
 ## Demo boundaries
 

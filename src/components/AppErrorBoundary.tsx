@@ -24,7 +24,7 @@ export default class AppErrorBoundary extends Component<
               <RefreshCw size={15} />
               Refresh page
             </button>
-            <a className="secondary-button" href="/">
+            <a className="secondary-button" href={import.meta.env.BASE_URL}>
               Back to home
             </a>
           </div>

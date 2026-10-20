@@ -30,8 +30,8 @@ export default function Landing() {
           <Brand />
         </Link>
         <nav>
-          <a href="#experience">The experience</a>
-          <a href="#features">Features</a>
+          <Link to="/#experience">The experience</Link>
+          <Link to="/#features">Features</Link>
           <ThemeButton />
           <Link className="secondary-button" to={authenticated ? '/app' : '/login'}>
             {authenticated ? 'Your workspace' : 'Sign in'}
@@ -63,10 +63,10 @@ export default function Landing() {
               Explore the demo
               <ArrowRight size={17} />
             </Link>
-            <a className="secondary-button" href="#experience">
+            <Link className="secondary-button" to="/#experience">
               Take a closer look
               <ChevronRight size={16} />
-            </a>
+            </Link>
           </div>
           <div className="hero-note">
             <ShieldCheck size={14} />
