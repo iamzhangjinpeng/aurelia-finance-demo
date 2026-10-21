@@ -9,7 +9,7 @@
   --border-2: #ded8e8;
   --ink: #201b35;
   --ink-2: #555066;
-  --ink-3: #777184;
+  --ink-3: #706a7a;
   --accent: #7042c1;
   --accent-weak: rgba(108, 92, 255, 0.08);
   --brand-blue: #408bfb;
@@ -53,6 +53,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
+  overflow-x: clip;
 }
 body {
   margin: 0;
@@ -650,7 +651,7 @@ button svg {
   top: 20px;
   font-size: 45px;
   font-weight: 200;
-  color: var(--border-2);
+  color: #958ca5;
 }
 .landing-cta {
   text-align: center;
@@ -916,7 +917,7 @@ form label small {
 }
 .demo-credentials p {
   font-size: 10px;
-  color: var(--ink-3);
+  color: var(--ink-2);
   line-height: 2;
   margin-top: 7px;
 }
@@ -1549,6 +1550,7 @@ form label small {
 /* Data tables */
 .table-scroll {
   overflow: auto;
+  contain: paint;
 }
 table {
   width: 100%;

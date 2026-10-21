@@ -111,7 +111,7 @@ export default function Transactions() {
           </strong>
           <small>USD · October 2026</small>
         </div>
-        <div className="table-scroll">
+        <div className="table-scroll" role="region" aria-label="Transactions table" tabIndex={0}>
           <table>
             <thead>
               <tr>

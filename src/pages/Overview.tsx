@@ -273,7 +273,7 @@ export default function Overview() {
               <ArrowRight size={14} />
             </Link>
           </div>
-          <div className="table-scroll">
+          <div className="table-scroll" role="region" aria-label="Recent transactions" tabIndex={0}>
             <table>
               <thead>
                 <tr>

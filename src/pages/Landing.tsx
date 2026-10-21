@@ -26,7 +26,7 @@ export default function Landing() {
   return (
     <main ref={root} className="landing">
       <header className="public-header">
-        <Link to="/" aria-label="Aurelia home">
+        <Link to="/" aria-label="Aurelia Finance Workspace home">
           <Brand />
         </Link>
         <nav>
@@ -106,11 +106,7 @@ export default function Landing() {
           </h2>
           <p>From the first payment to your next milestone, see how your money moves.</p>
         </div>
-        <Link
-          to={authenticated ? '/app' : '/login'}
-          className="workspace-preview reveal"
-          aria-label="Explore the finance workspace"
-        >
+        <Link to={authenticated ? '/app' : '/login'} className="workspace-preview reveal">
           <div className="preview-sidebar">
             <Brand compact />
             <LayoutDashboard />

@@ -102,30 +102,29 @@ export default function Login() {
                 }}
               />
             </label>
-            <label>
-              Password
-              <span className="password-field">
-                <input
-                  type={visible ? 'text' : 'password'}
-                  required
-                  autoComplete="current-password"
-                  placeholder="Enter your password"
-                  value={password}
-                  onChange={(e) => {
-                    setPassword(e.target.value)
-                    setError('')
-                  }}
-                />
-                <button
-                  type="button"
-                  className="icon-button"
-                  aria-label={visible ? 'Hide password' : 'Show password'}
-                  onClick={() => setVisible(!visible)}
-                >
-                  {visible ? <EyeOff size={17} /> : <Eye size={17} />}
-                </button>
-              </span>
-            </label>
+            <label htmlFor="demo-password">Password</label>
+            <span className="password-field">
+              <input
+                id="demo-password"
+                type={visible ? 'text' : 'password'}
+                required
+                autoComplete="current-password"
+                placeholder="Enter your password"
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value)
+                  setError('')
+                }}
+              />
+              <button
+                type="button"
+                className="icon-button"
+                aria-label={visible ? 'Hide password' : 'Show password'}
+                onClick={() => setVisible(!visible)}
+              >
+                {visible ? <EyeOff size={17} /> : <Eye size={17} />}
+              </button>
+            </span>
             {error && (
               <div className="error-banner" role="alert">
                 {error}

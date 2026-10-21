@@ -52,7 +52,7 @@ export default function Workspace() {
         className={`sidebar ${mobile ? 'mobile-open' : ''}`}
       >
         <div className="brand-row">
-          <Link to="/" aria-label="Aurelia home">
+          <Link to="/" aria-label="Aurelia Finance Workspace home">
             <Brand compact={collapsed} />
           </Link>
           <button

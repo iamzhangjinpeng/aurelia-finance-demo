@@ -4,6 +4,14 @@
 
 **[Open the live demo](https://iamzhangjinpeng.github.io/aurelia-finance-demo/)**
 
+## Project case study
+
+**Brief.** Turn a gradient-led visual reference into an English-first finance workspace that feels like one coherent product across the landing page and dashboard.
+
+**Approach.** Rebuilt the interface in React and TypeScript while keeping the blue-purple identity, thin-line icons, and interactive fluid landing effect. Added responsive finance dashboards, searchable transactions, virtual-card controls, editable budgets, and profile preferences. Fictional data and browser storage make every flow safe to explore without a backend.
+
+**What it demonstrates.** Product UI implementation, data-rich React screens, reusable interaction patterns, responsive layouts, theme support, and a clear boundary between a portfolio simulation and real financial services.
+
 An interactive finance workspace built with React and TypeScript. Designed as a portfolio project for demonstrating polished product design, responsive dashboards, accessible interactions, and useful frontend behavior.
 
 All people, balances, accounts, and transactions are fictional. The app runs entirely in the browser and needs no backend, API keys, or bank connection.
@@ -19,6 +27,8 @@ A 35-second screen recording of the interactive homepage, light/dark themes, dem
 Recorded from the running app with fictional data. The preview loops automatically; click it to open the full recording.
 
 Screenshots: [Light dashboard](docs/images/dashboard-light.png) · [Dark dashboard](docs/images/dashboard-dark.png) · [Homepage](docs/images/landing.png)
+
+Link previews use a 1200 × 630 dashboard card with Open Graph and Twitter metadata.
 
 ## Explore the demo
 
@@ -59,13 +69,14 @@ npm run dev -- --port 5188
 
 ```bash
 npm test
+npm run test:e2e
 npm run build
 npm run format:check
 ```
 
 `npm run preview` serves the production build. GitHub Actions runs tests and a production build for pushes and pull requests.
 
-The tests cover settled-funds calculations, pending/declined exclusion, combined search filters, reference lookup, and CSV escaping.
+Unit tests cover settled-funds calculations, pending/declined exclusion, combined search filters, reference lookup, and CSV escaping. Playwright runs key login, navigation, transaction, budget, persistence, and reset flows in desktop and mobile Chromium. Axe checks WCAG A/AA rules on the landing page and login, then checks every workspace route in both light and dark themes.
 
 ## Tech stack
 

@@ -34,6 +34,8 @@ jobs:
         env:
           VITE_ROUTER_MODE: hash
         run: npm run build -- --base "${{ steps.pages.outputs.base_path }}/"
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
       - name: Upload site
         uses: actions/upload-pages-artifact@v4
         with:
